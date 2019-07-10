@@ -29,25 +29,9 @@ class App extends Component {
     });
   }
 
-  handleClick = ({target}) => {
-    const $btn = document.querySelector('.btn');
-    const $menu = document.querySelector('.menu');
-    if(target === $btn) {
-        $menu.classList.toggle('active');
-    }
-    if(!target.closest('.menu') && !(target === $btn) && $menu.classList.contains('active')){
-        $menu.classList.remove('active');
-    }
-    if(target.classList.contains('menu__content')){
-      document.querySelector('.text').innerHTML = target.innerHTML;
-      $menu.classList.remove('active');
-    }
-  }
-
-
   render(){
     return (
-      <div className="App" onClick={this.handleClick}>
+      <div className="App">
         <div className="container">
           <AddItem addItem={this.addItem}/>
           <p className="text"></p>
@@ -57,6 +41,25 @@ class App extends Component {
     );
   }
 }
+
+document.addEventListener('click',({target}) => {
+  const $menu = document.querySelector('.menu');
+  const $btn = document.querySelector('.btn');
+
+  if(target === $btn) {
+    $menu.classList.toggle('active');
+  }
+
+  if(!target.closest('.menu') && !(target === $btn) && $menu.classList.contains('active')){
+    $menu.classList.remove('active');
+  }
+
+  if(target.classList.contains('menu__content')){
+    document.querySelector('.text').innerHTML = target.innerHTML;
+    $menu.classList.remove('active');
+  }
+
+});
 
 if (document.getElementById('root')) {
   ReactDOM.render(<App />, document.getElementById('root'));

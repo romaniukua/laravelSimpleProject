@@ -6286,7 +6286,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".container {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  padding-top: 100px;\n}\n\n.App {\n  height: 1000px;\n}", ""]);
+exports.push([module.i, ".container {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  padding-top: 100px;\n}", ""]);
 
 // exports
 
@@ -62483,25 +62483,6 @@ function (_Component) {
       });
     });
 
-    _defineProperty(_assertThisInitialized(_this), "handleClick", function (_ref) {
-      var target = _ref.target;
-      var $btn = document.querySelector('.btn');
-      var $menu = document.querySelector('.menu');
-
-      if (target === $btn) {
-        $menu.classList.toggle('active');
-      }
-
-      if (!target.closest('.menu') && !(target === $btn) && $menu.classList.contains('active')) {
-        $menu.classList.remove('active');
-      }
-
-      if (target.classList.contains('menu__content')) {
-        document.querySelector('.text').innerHTML = target.innerHTML;
-        $menu.classList.remove('active');
-      }
-    });
-
     return _this;
   }
 
@@ -62522,8 +62503,7 @@ function (_Component) {
     key: "render",
     value: function render() {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "App",
-        onClick: this.handleClick
+        className: "App"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_AddItem__WEBPACK_IMPORTED_MODULE_4__["default"], {
@@ -62538,6 +62518,25 @@ function (_Component) {
 
   return App;
 }(react__WEBPACK_IMPORTED_MODULE_0__["Component"]);
+
+document.addEventListener('click', function (_ref) {
+  var target = _ref.target;
+  var $menu = document.querySelector('.menu');
+  var $btn = document.querySelector('.btn');
+
+  if (target === $btn) {
+    $menu.classList.toggle('active');
+  }
+
+  if (!target.closest('.menu') && !(target === $btn) && $menu.classList.contains('active')) {
+    $menu.classList.remove('active');
+  }
+
+  if (target.classList.contains('menu__content')) {
+    document.querySelector('.text').innerHTML = target.innerHTML;
+    $menu.classList.remove('active');
+  }
+});
 
 if (document.getElementById('root')) {
   react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(App, null), document.getElementById('root'));
@@ -62667,8 +62666,8 @@ if(false) {}
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! D:\Front_end_PRO\laravel\tutorial-react\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! D:\Front_end_PRO\laravel\tutorial-react\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! D:\MyFirstRepository\laravelSimpleProject\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! D:\MyFirstRepository\laravelSimpleProject\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
